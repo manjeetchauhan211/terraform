@@ -1,4 +1,4 @@
-#aws.tf file new
+#aws.tf 
 variable "AWS_ACCESS_KEY" {}
 variable "AWS_SECRET_KEY" {}
 variable "aws_region" {}
