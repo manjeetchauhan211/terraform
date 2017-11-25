@@ -13,11 +13,11 @@ resource "aws_key_pair" "new-key1" {
 }
 
 resource "aws_instance" "web" {
-   count = 3
+   count = 2
    ami = "ami-da05a4a0"
    instance_type = "t2.micro"
    key_name = "${aws_key_pair.new-key1.key_name}"
    tags {
-      Name = "Test-instance"
+      Name = "Test-Devops"
     }
 } 
