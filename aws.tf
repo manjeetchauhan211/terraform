@@ -21,6 +21,6 @@ resource "aws_instance" "web" {
       Name = "Test-Devops"
     }
 provisioner "local-exec" {
-   command = "echo ${aws_instance.example.public_ip} >> ip_address.txt"
+   command = "echo ${aws_instance.web.public_ip} >> ip_address.txt"
   }
 } 
