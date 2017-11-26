@@ -20,7 +20,7 @@ resource "aws_instance" "web" {
    tags {
       Name = "Test-Devops"
     }
-resource "aws_codedeploy_app "foo" {
+resource "aws_codedeploy_app" "foo" {
    name = "ansible"
 }
 provisioner "local-exec" {
