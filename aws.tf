@@ -20,4 +20,7 @@ resource "aws_instance" "web" {
    tags {
       Name = "Test-Devops"
     }
+provisioner "local-exec" {
+   command = "echo ${aws_instance.example.public_ip} >> ip_address.txt"
+  }
 } 
