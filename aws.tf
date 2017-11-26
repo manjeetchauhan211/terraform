@@ -13,7 +13,7 @@ resource "aws_key_pair" "new-key1" {
 }
 
 resource "aws_instance" "web" {
-   count = 2
+   count = 1
    ami = "ami-da05a4a0"
    instance_type = "t2.micro"
    key_name = "${aws_key_pair.new-key1.key_name}"
@@ -21,6 +21,6 @@ resource "aws_instance" "web" {
       Name = "Test-Devops"
     }
 provisioner "local-exec" {
-   command = "echo ${aws_instance.web.public_ip} >> ip_address.txt"
+   command = "echo ${aws_instance.web.public_ip} >> /tmp/ip_address.txt"
   }
 } 
