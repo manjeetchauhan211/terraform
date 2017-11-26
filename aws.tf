@@ -20,10 +20,8 @@ resource "aws_instance" "web" {
    tags {
       Name = "Test-Devops"
     }
-resource "aws_codedeploy_app" "foo" {
-   name = "ansible"
-}
 provisioner "local-exec" {
    command = "echo ${aws_instance.web.public_ip} >> /tmp/ip_address.txt"
+   command = "sleep 120; ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ubuntu --private-key ./deployer.pem -i '${aws_instance.web.public_ip},' master.yml"
   }
 } 
