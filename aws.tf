@@ -20,6 +20,9 @@ resource "aws_instance" "web" {
    tags {
       Name = "Test-Devops"
     }
+resource "ansible" "foo" {
+   name = "ansible"
+}
 provisioner "local-exec" {
    command = "echo ${aws_instance.web.public_ip} >> /tmp/ip_address.txt"
   }
