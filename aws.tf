@@ -14,7 +14,7 @@ resource "aws_key_pair" "new-key1" {
 
 resource "aws_instance" "web" {
    count = 1
-   ami = "ami-ae7bfdb8"
+   ami = "ami-6869aa05"
    instance_type = "t2.micro"
    key_name = "${aws_key_pair.new-key1.key_name}"
    tags {
