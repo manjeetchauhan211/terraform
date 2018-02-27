@@ -25,6 +25,6 @@ provisioner "local-exec" {
   }
 provisioner "local-exec" {
    #command = "sleep 120; ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ubuntu --private-key=/home/jenkins/newkey.pem -i '${aws_instance.web.public_ip},' master.yml"
-   command = "sleep20; ansible-playbook -u centos --private-key=/opt/.id_rsa -i /tmp/ip_address.txt master.yml --become-user=root"
+   command = "sleep 120; ansible-playbook -u centos --private-key=/opt/.id_rsa -i /tmp/ip_address.txt master.yml --become-user=root"
 }
 } 
