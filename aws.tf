@@ -18,7 +18,7 @@ resource "aws_instance" "web" {
    instance_type = "t2.micro"
    key_name = "${aws_key_pair.new-key1.key_name}"
    tags {
-      Name = "Test-DEV"
+      Name = "Apache"
     }
 provisioner "local-exec" {
    command = "echo ${aws_instance.web.public_ip} > /tmp/ip_address.txt"
